@@ -33,6 +33,7 @@ public class Registration {
 	public static final BlockBehaviour.Properties BLOCK_PROPERTIES = BlockBehaviour.Properties.of(Material.GRASS).strength(1f);
 	
 	public static final RegistryObject<Block> FLOWER_GRASS = BLOCKS.register("flower_grass", () -> new Block(BLOCK_PROPERTIES));
+	public static final RegistryObject<Item> FLOWER_GRASS_ITEM = fromBlock(FLOWER_GRASS);
 	
 	public static <B extends Block> RegistryObject<Item> fromBlock(RegistryObject<B> block) {
 		return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), ITEM_PROPERTIES));
